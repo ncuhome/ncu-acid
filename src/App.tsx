@@ -1,13 +1,3 @@
-/*
- * @Author: SnowWarri0r
- * @LastModifiedBy: SnowWarri0r
- * @GithubUser: SnowWarri0r
- * @Date: 2022-03-20 17:49:10
- * @Company: ncuhome
- * @LastEditTime: 2022-03-20 17:54:53
- * @FilePath: \ncu-acid\src\App.tsx
- * @Description:
- */
 import { useEffect } from "react";
 import Loading from "./components/loading";
 import { useAppReady, useSafeArea } from "mincu-react";
