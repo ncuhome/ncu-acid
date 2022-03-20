@@ -1,3 +1,13 @@
+/*
+ * @Author: SnowWarri0r
+ * @LastModifiedBy: SnowWarri0r
+ * @GithubUser: SnowWarri0r
+ * @Date: 2022-03-20 17:49:10
+ * @Company: ncuhome
+ * @LastEditTime: 2022-03-20 17:54:53
+ * @FilePath: \ncu-acid\src\App.tsx
+ * @Description:
+ */
 import { useEffect } from "react";
 import Loading from "./components/loading";
 import { useAppReady, useSafeArea } from "mincu-react";
@@ -25,9 +35,6 @@ const App = () => {
     name: xm,
   };
 
-  const content = encodeURIComponent(JSON.stringify(qrData));
-  const url = `https://rd.wechat.com/qrcode/confirm?block_type=101&lang=zh_CN&content=${content}&scene=34`;
-
   if (!isReady) {
     return <Loading />;
   }
@@ -49,7 +56,7 @@ const App = () => {
         <div className="text">姓名: {xm}</div>
         <div className="text">学号/工号/B类ID: {xh}</div>
         <div style={{ height: "36px" }}></div>
-        <QRCode value={url} fgColor={"#1D3A74"} size={320} />
+        <QRCode value={JSON.stringify(qrData)} fgColor={"#1D3A74"} size={320} />
 
         <div style={{ height: "40px" }}></div>
         <div className="tip">
