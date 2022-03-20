@@ -62,14 +62,17 @@ button {
   letter-spacing: 1px;
   line-height: 20px;
   font-family: Arial, sans-serif;
-  opacity: .5;
+  opacity: .7;
 }
 
 .tip-x {
-  font-size: 13px;
+  font-size: 12px;
+  transform: scale(.8);
   letter-spacing: 1px;
   line-height: 20px;
   font-family: Arial, sans-serif;
   text-align: center;
   opacity: .5;
+  position: absolute;
+  margin: 0 20px;
 }

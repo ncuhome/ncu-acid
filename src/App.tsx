@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Loading from "./components/loading";
-import { useAppReady } from "mincu-react";
+import { useAppReady, useSafeArea } from "mincu-react";
 import QRCode from "react-qr-code";
 import { dataModule, networkModule } from "mincu-react";
 import * as ReactGA from "react-ga";
@@ -10,7 +10,7 @@ ReactGA.initialize("UA-80324378-26");
 
 const App = () => {
   const isReady = useAppReady();
-  // const { top } = useSafeArea();
+  const { bottom } = useSafeArea();
 
   useEffect(() => {
     networkModule.getStoredToken();
@@ -26,7 +26,7 @@ const App = () => {
   };
 
   const content = encodeURIComponent(JSON.stringify(qrData));
-  const url = `https://rd.wechat.com/qrcode/confirm?block_type=101&lang=zh_CN&content=${content}&scene=34`
+  const url = `https://rd.wechat.com/qrcode/confirm?block_type=101&lang=zh_CN&content=${content}&scene=34`;
 
   if (!isReady) {
     return <Loading />;
@@ -51,13 +51,15 @@ const App = () => {
         <div style={{ height: "36px" }}></div>
         <QRCode value={url} fgColor={"#1D3A74"} size={320} />
 
-
         <div style={{ height: "40px" }}></div>
-        <div className="tip">本码若无法正常使用，可点击复制下面的链接到【微信】</div>
+        <div className="tip">
+          本码若无法正常使用，可点击复制下面的链接到【微信】
+        </div>
         <div className="tip-2">https://jhrz.ncu.edu.cn/ndhsjc/student/#/</div>
 
-        <div style={{ height: "20px" }}></div>
-        <div className="tip-x">为战胜新冠疫情，保证南大核酸码被大规模推广使用，本微应用作为南大核酸码快捷入口</div>
+        <div className="tip-x" style={{ bottom: bottom + 20 }}>
+          为战胜新冠疫情，保证南大核酸码被大规模推广使用，本微应用作为南大核酸码快捷入口供同学们使用。
+        </div>
       </div>
     </div>
   );
