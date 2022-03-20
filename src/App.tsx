@@ -59,7 +59,7 @@ const App = () => {
         <div className="tip">
           本码若无法正常使用，可点击复制下面的链接到【微信】
         </div>
-        <div className="tip-2">https://jhrz.ncu.edu.cn/ndhsjc/student/#/</div>
+        <div className="tip-2">https://jhrz.ncu.edu.cn/ndhsjc/student</div>
 
         <div className="tip-x" style={{ bottom: dataModule.inset.bottom + 20 }}>
           为战胜新冠疫情，保证南大核酸码被大规模推广使用，本微应用作为南大核酸码快捷入口供同学们使用。
