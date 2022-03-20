@@ -1,25 +1,16 @@
 import { useEffect } from "react";
 import Loading from "./components/loading";
-import { useLogin } from "./hooks/useLogin";
-import { useSafeArea } from "./hooks/useSafeArea";
+import { useAppReady } from "mincu-react";
 import QRCode from "react-qr-code";
-import {
-  dataModule,
-  networkModule,
-} from "mincu-react";
-import './App.css';
+import { dataModule, networkModule } from "mincu-react";
+import "./App.css";
 
 const App = () => {
-  const { isReady } = useLogin();
-  const { top } = useSafeArea();
+  const isReady = useAppReady();
 
   useEffect(() => {
     networkModule.getStoredToken();
   }, []);
-
-  if (!isReady) {
-    return <Loading />;
-  }
 
   const xh = dataModule.userInfo.profile.entireProfile?.base_info?.xh ?? "";
   const xm = dataModule.userInfo.profile.entireProfile?.base_info?.xm ?? "";
@@ -29,11 +20,15 @@ const App = () => {
     name: xm,
   };
 
+  if (!isReady) {
+    return <Loading />;
+  }
+
   return (
     <div>
       <div
         style={{
-          marginTop: '36px',
+          marginTop: "36px",
           marginRight: 10,
           marginLeft: 10,
           display: "flex",
@@ -45,7 +40,7 @@ const App = () => {
         <div className="text">姓名: {xm}</div>
         <div className="text">学号/工号/B类ID: {xh}</div>
         <div style={{ height: "36px" }}></div>
-        <QRCode value={JSON.stringify(qrData)} fgColor={'#1D3A74'} size={320}/>
+        <QRCode value={JSON.stringify(qrData)} fgColor={"#1D3A74"} size={320} />
       </div>
     </div>
   );
