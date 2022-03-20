@@ -76,3 +76,31 @@ button {
   position: absolute;
   margin: 0 20px;
 }
+
+.header {
+  background: #4874C0;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 16px;
+  letter-spacing: .5px;
+  line-height: 32px;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.exit {
+  width: 24px;
+  height: 24px;
+}
+
+.more {
+  width: 28px;
+  height: 28px;
+}
