@@ -18,19 +18,17 @@ const App = () => {
     ReactGA.pageview(location.pathname);
   }, []);
 
-  // const xh = dataModule.userInfo.profile.entireProfile?.base_info?.xh ?? "";
-  // const xm = dataModule.userInfo.profile.entireProfile?.base_info?.xm ?? "";
-  const xh = "6109120013";
-  const xm = "熊朝晖";
+  const xh = dataModule.userInfo.profile.entireProfile?.base_info?.xh ?? "";
+  const xm = dataModule.userInfo.profile.entireProfile?.base_info?.xm ?? "";
 
   const qrData = {
     userId: xh,
     name: utf16to8(xm),
   };
 
-  // if (!isReady) {
-  //   return <Loading />;
-  // }
+  if (!isReady) {
+    return <Loading />;
+  }
 
   return (
     <div>
