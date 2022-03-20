@@ -52,9 +52,12 @@ const App = () => {
         <QRCode value={url} fgColor={"#1D3A74"} size={320} />
 
 
-        <div style={{ height: "60px" }}></div>
+        <div style={{ height: "40px" }}></div>
         <div className="tip">本码若无法正常使用，可点击复制下面的链接到【微信】</div>
         <div className="tip-2">https://jhrz.ncu.edu.cn/ndhsjc/student/#/</div>
+
+        <div style={{ height: "20px" }}></div>
+        <div className="tip-x">为战胜新冠疫情，保证南大核酸码被大规模推广使用，本微应用作为南大核酸码快捷入口</div>
       </div>
     </div>
   );

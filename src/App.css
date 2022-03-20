@@ -64,3 +64,12 @@ button {
   font-family: Arial, sans-serif;
   opacity: .5;
 }
+
+.tip-x {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  opacity: .5;
+}
