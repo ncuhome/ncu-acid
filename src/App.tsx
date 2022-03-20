@@ -3,13 +3,18 @@ import Loading from "./components/loading";
 import { useAppReady } from "mincu-react";
 import QRCode from "react-qr-code";
 import { dataModule, networkModule } from "mincu-react";
+import * as ReactGA from "react-ga";
 import "./App.css";
+
+ReactGA.initialize("UA-80324378-26");
 
 const App = () => {
   const isReady = useAppReady();
+  // const { top } = useSafeArea();
 
   useEffect(() => {
     networkModule.getStoredToken();
+    ReactGA.pageview(location.pathname);
   }, []);
 
   const xh = dataModule.userInfo.profile.entireProfile?.base_info?.xh ?? "";
@@ -28,7 +33,8 @@ const App = () => {
     <div>
       <div
         style={{
-          marginTop: "36px",
+          // marginTop: `${top + 36}px`,
+          marginTop: `36px`,
           marginRight: 10,
           marginLeft: 10,
           display: "flex",

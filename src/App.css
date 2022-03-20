@@ -44,7 +44,7 @@ button {
 .text {
   font-size: 21px;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 32px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
