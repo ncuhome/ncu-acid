@@ -48,3 +48,19 @@ button {
   line-height: 32px;
   font-family: Arial, sans-serif;
 }
+
+.tip {
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+  opacity: .5;
+}
+
+.tip-2 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 20px;
+  font-family: Arial, sans-serif;
+  opacity: .5;
+}
