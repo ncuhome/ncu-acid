@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Loading from "./components/loading";
+import utf16to8 from "./lib/util";
 import { useAppReady, useSafeArea } from "mincu-react";
 import QRCode from "react-qr-code";
 import { dataModule, networkModule } from "mincu-react";
@@ -17,17 +18,19 @@ const App = () => {
     ReactGA.pageview(location.pathname);
   }, []);
 
-  const xh = dataModule.userInfo.profile.entireProfile?.base_info?.xh ?? "";
-  const xm = dataModule.userInfo.profile.entireProfile?.base_info?.xm ?? "";
+  // const xh = dataModule.userInfo.profile.entireProfile?.base_info?.xh ?? "";
+  // const xm = dataModule.userInfo.profile.entireProfile?.base_info?.xm ?? "";
+  const xh = "6109120013";
+  const xm = "熊朝晖";
 
   const qrData = {
     userId: xh,
-    name: xm,
+    name: utf16to8(xm),
   };
 
-  if (!isReady) {
-    return <Loading />;
-  }
+  // if (!isReady) {
+  //   return <Loading />;
+  // }
 
   return (
     <div>
