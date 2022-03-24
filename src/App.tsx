@@ -56,9 +56,9 @@ const App = () => {
     return (
       <>
         <div style={{ height: "40px" }}></div>
-        <div className="tip">
+        {/* <div className="tip">
           本码若无法正常使用，可点击复制下面的链接到【微信】
-        </div>
+        </div> */}
         {/* <div className="tip-2">https://jhrz.ncu.edu.cn/ndhsjc/student</div> */}
 
         <div className="tip-x" style={{ bottom: dataModule.inset.bottom + 20 }}>
